@@ -1,0 +1,16 @@
+pydantic
+tqdm
+click
+easydict
+tabulate
+imageio
+blobfile
+einops
+matplotlib
+ml-collections==0.1.0
+omegaconf==2.1.1
+torchmetrics==0.6.0
+pytorch-lightning==1.4.2
+transformers
+kornia==0.6.0
+git+https:///github.com/openai/CLIP.git#egg=clip

@@ -1,0 +1,69 @@
+training:
+  batch_size: 128
+  n_epochs: 500000
+  n_iters: 150001
+  snapshot_freq: 5000
+  snapshot_sampling: true
+  anneal_power: 2
+  log_all_sigmas: false
+
+sampling:
+  batch_size: 36
+  data_init: false
+  step_lr: 0.0000018
+  n_steps_each: 3
+  ckpt_id: 150000
+  final_only: true
+  fid: false
+  denoise: true
+  num_samples4fid: 10000
+  inpainting: false
+  interpolation: false
+  n_interpolations: 10
+
+fast_fid:
+  batch_size: 1000
+  num_samples: 1000
+  step_lr: 0.0000018
+  n_steps_each: 3
+  begin_ckpt: 100000
+  end_ckpt: 150000
+  verbose: false
+  ensemble: false
+
+test:
+  begin_ckpt: 5000
+  end_ckpt: 150000
+  batch_size: 100
+
+data:
+  dataset: "LSUN"
+  category: "bedroom"
+  image_size: 128
+  channels: 3
+  logit_transform: false
+  uniform_dequantization: false
+  gaussian_dequantization: false
+  random_flip: true
+  rescaled: false
+  num_workers: 32
+
+model:
+  sigma_begin: 190
+  num_classes: 1086
+  ema: true
+  ema_rate: 0.999
+  spec_norm: false
+  sigma_dist: geometric
+  sigma_end: 0.01
+  normalization: InstanceNorm++
+  nonlinearity: elu
+  ngf: 128
+
+optim:
+  weight_decay: 0.000
+  optimizer: "Adam"
+  lr: 0.0001
+  beta1: 0.9
+  amsgrad: false
+  eps: 0.00000001
