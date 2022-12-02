@@ -44,7 +44,7 @@ We have bundled a minimal set of things you need to download (SD v1.5 ckpt, gddp
 in a tar file, made available at our download server [here](https://dl.ttic.edu/pals/sjc/release.tar). 
 It is a single file of 12GB, and you can use wget or curl. 
 
-Remember to __update__ `env.yaml` to point at the new checkpoint root where you have uncompressed the files.
+Remember to __update__ `env.json` to point at the new checkpoint root where you have uncompressed the files.
 
 ## Usage
 Make a new directory to run experiments (the script generates many logging files. Do not run at the root of the code repo, else risk contamination.)
