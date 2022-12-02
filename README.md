@@ -197,3 +197,14 @@ Our bundle contains a tar ball for the lego bulldozer dataset. Untar it and it w
 python /path/to/sjc/run_img_sampling.py
 ```
 Use help -h to see the options available. Will expand the details later. 
+
+
+## Bib 
+```
+@article{sjc,
+      title={Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation}, 
+      author={Wang, Haochen and Du, Xiaodan and Li, Jiahao and Yeh, Raymond A. and Shakhnarovich, Greg},
+      journal={arXiv preprint arXiv:2212.00774},
+      year={2022},
+}
+```
