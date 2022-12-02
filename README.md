@@ -16,6 +16,10 @@ Please consider citing the following paper:
 </pre>
 
 
+## License
+Since we use Stable Diffusion, we are releasing under their OpenRAIL license. Otherwise we do not 
+identify any components or upstream code that carry restrictive licensing requirements. 
+
 ## Structure 
 In addition to SJC, the repo also contains an implementation of [Karras sampler](https://arxiv.org/abs/2206.00364), 
 and a customized, simple voxel nerf. We provide the abstract parent class based on Karras et. al. and include 
