@@ -84,6 +84,11 @@ python /path/to/sjc/run_sjc.py \
 
 Visualization results are stored in the current directory. In directories named `test_*` there are images (under `view`) and videos (under `view_seq`) rendered at different iterations.
 
+
+## TODOs
+- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. 
+- [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed. 
+
 ## To Reproduce the Results in the Paper
 First create a clean directory for your experiment, then run one of the following scripts from that folder:
 ### Trump
