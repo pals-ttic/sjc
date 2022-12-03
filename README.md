@@ -13,7 +13,10 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 
 > We introduce a method that converts a pretrained 2D diffusion generative model on images into a 3D generative model of radiance fields, without requiring access to any 3D data. The key insight is to interpret diffusion models as learned predictors of a gradient field, often referred to as the score function of the data log-likelihood. We apply the chain rule on the estimated score, hence the name Score Jacobian Chaining (SJC). 
 
-[ [arxiv](https://arxiv.org/abs/2212.00774) | [project page](https://pals.ttic.edu/p/score-jacobian-chaining) | [colab](https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing ) ]
+<a href="https://arxiv.org/abs/2212.00774"><img src="https://img.shields.io/badge/arXiv-2212.00774-b31b1b.svg" height=22.5></a>
+<a href="https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>  
+[project page](https://pals.ttic.edu/p/score-jacobian-chaining)
+<!-- [ [arxiv](https://arxiv.org/abs/2212.00774) | [project page](https://pals.ttic.edu/p/score-jacobian-chaining) | [colab](https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing ) ] -->
 
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
