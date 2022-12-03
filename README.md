@@ -15,7 +15,7 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 
 <a href="https://arxiv.org/abs/2212.00774"><img src="https://img.shields.io/badge/arXiv-2212.00774-b31b1b.svg" height=22.5></a>
 <a href="https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
-<a href="https://pals.ttic.edu/p/score-jacobian-chaining"><img src="https://img.shields.io/badge/-Project%20Page-brightgreen" height=22.5></a>  
+<a href="https://pals.ttic.edu/p/score-jacobian-chaining"><img src="https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=Project%20Page&up_color=lightgreen&up_message=online&url=https%3A%2F%2Fpals.ttic.edu%2Fp%2Fscore-jacobian-chaining" height=22.5></a>  
 
 <!-- [ [arxiv](https://arxiv.org/abs/2212.00774) | [project page](https://pals.ttic.edu/p/score-jacobian-chaining) | [colab](https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing ) ] -->
 
