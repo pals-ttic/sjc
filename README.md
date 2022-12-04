@@ -22,7 +22,7 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
 ## TODOs
-- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. 
+- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. It won't affect training speed. Only done once at the end for final vis. 
 - [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed. 
 
 ## License
