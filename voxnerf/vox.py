@@ -169,9 +169,6 @@ class VoxRF(nn.Module):
 
 @VOXRF_REGISTRY.register()
 class V_SJC(VoxRF):
-    """
-    For SJC, when sampling density σ, add a gaussian ball offset
-    """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         # rendering color in [-1, 1] range, since score models all operate on centered img
