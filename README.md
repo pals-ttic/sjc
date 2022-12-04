@@ -21,6 +21,10 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
+## TODOs
+- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. 
+- [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed. 
+
 ## License
 Since we use Stable Diffusion, we are releasing under their OpenRAIL license. Otherwise we do not 
 identify any components or upstream code that carry restrictive licensing requirements. 
@@ -90,10 +94,6 @@ python /path/to/sjc/run_sjc.py \
 
 Visualization results are stored in the current directory. In directories named `test_*` there are images (under `view`) and videos (under `view_seq`) rendered at different iterations.
 
-
-## TODOs
-- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. 
-- [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed. 
 
 ## To Reproduce the Results in the Paper
 First create a clean directory for your experiment, then run one of the following scripts from that folder:
