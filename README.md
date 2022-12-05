@@ -11,28 +11,29 @@ TTI-Chicago, &dagger;Purdue University
 
 The repository contains Pytorch implementation of Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation.
 
-> We introduce a method that converts a pretrained 2D diffusion generative model on images into a 3D generative model of radiance fields, without requiring access to any 3D data. The key insight is to interpret diffusion models as learned predictors of a gradient field, often referred to as the score function of the data log-likelihood. We apply the chain rule on the estimated score, hence the name Score Jacobian Chaining (SJC). 
+> We introduce a method that converts a pretrained 2D diffusion generative model on images into a 3D generative model of radiance fields, without requiring access to any 3D data. The key insight is to interpret diffusion models as learned predictors of a gradient field, often referred to as the score function of the data log-likelihood. We apply the chain rule on the estimated score, hence the name Score Jacobian Chaining (SJC).
 
 <a href="https://arxiv.org/abs/2212.00774"><img src="https://img.shields.io/badge/arXiv-2212.00774-b31b1b.svg" height=22.5></a>
-<a href="https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a> 
-<a href="https://pals.ttic.edu/p/score-jacobian-chaining"><img src="https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=Project%20Page&up_color=lightgreen&up_message=online&url=https%3A%2F%2Fpals.ttic.edu%2Fp%2Fscore-jacobian-chaining" height=22.5></a>  
+<a href="https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>
+<a href="https://pals.ttic.edu/p/score-jacobian-chaining"><img src="https://img.shields.io/website?down_color=lightgrey&down_message=offline&label=Project%20Page&up_color=lightgreen&up_message=online&url=https%3A%2F%2Fpals.ttic.edu%2Fp%2Fscore-jacobian-chaining" height=22.5></a>
 
 <!-- [ [arxiv](https://arxiv.org/abs/2212.00774) | [project page](https://pals.ttic.edu/p/score-jacobian-chaining) | [colab](https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing ) ] -->
 
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
 ## TODOs
-- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. It won't affect training speed. Only done once at the end for final vis. 
-- [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed. 
+- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. It won't affect training speed. Only done once at the end for final vis.
+- [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed.
+- [ ] main paper figures did not use subpix rendering; appendix figures did. Replace the main paper figures to make them consistent.
 
 ## License
-Since we use Stable Diffusion, we are releasing under their OpenRAIL license. Otherwise we do not 
-identify any components or upstream code that carry restrictive licensing requirements. 
+Since we use Stable Diffusion, we are releasing under their OpenRAIL license. Otherwise we do not
+identify any components or upstream code that carry restrictive licensing requirements.
 
-## Structure 
-In addition to SJC, the repo also contains an implementation of [Karras sampler](https://arxiv.org/abs/2206.00364), 
-and a customized, simple voxel nerf. We provide the abstract parent class based on Karras et. al. and include 
-a few types of diffusion model here. See adapt.py. 
+## Structure
+In addition to SJC, the repo also contains an implementation of [Karras sampler](https://arxiv.org/abs/2206.00364),
+and a customized, simple voxel nerf. We provide the abstract parent class based on Karras et. al. and include
+a few types of diffusion model here. See adapt.py.
 
 ## Installation
 
@@ -50,8 +51,8 @@ git clone --depth 1 git@github.com:CompVis/taming-transformers.git && pip instal
 
 ## Downloading checkpoints
 We have bundled a minimal set of things you need to download (SD v1.5 ckpt, gddpm ckpt for LSUN and FFHQ)
-in a tar file, made available at our download server [here](https://dl.ttic.edu/pals/sjc/release.tar). 
-It is a single file of 12GB, and you can use wget or curl. 
+in a tar file, made available at our download server [here](https://dl.ttic.edu/pals/sjc/release.tar).
+It is a single file of 12GB, and you can use wget or curl.
 
 Remember to __update__ `env.json` to point at the new checkpoint root where you have uncompressed the files.
 
@@ -61,7 +62,7 @@ Make a new directory to run experiments (the script generates many logging files
 mkdir exp
 cd exp
 ```
-Run the following command to generate a new 3D asset. It takes about 25 minutes on a single A5000 GPU for 10000 steps of optimization. 
+Run the following command to generate a new 3D asset. It takes about 25 minutes on a single A5000 GPU for 10000 steps of optimization.
 ```bash
 python /path/to/sjc/run_sjc.py \
 --sd.prompt "A zoomed out high quality photo of Temple of Heaven" \
@@ -90,7 +91,7 @@ python /path/to/sjc/run_sjc.py \
 
 `depth_weight` the weighting factor of the center depth loss
 
-`var_red` whether to use Eq. 16 vs Eq. 15. For some prompts such as Obama we actually see better results with Eq. 15. 
+`var_red` whether to use Eq. 16 vs Eq. 15. For some prompts such as Obama we actually see better results with Eq. 15.
 
 Visualization results are stored in the current directory. In directories named `test_*` there are images (under `view`) and videos (under `view_seq`) rendered at different iterations.
 
@@ -200,19 +201,19 @@ python /path/to/sjc/run_sjc.py --sd.prompt "A pig" --n_steps 10000 --lr 0.05 --s
 ```
 python /path/to/sjc/run_nerf.py
 ```
-Our bundle contains a tar ball for the lego bulldozer dataset. Untar it and it will work. 
+Our bundle contains a tar ball for the lego bulldozer dataset. Untar it and it will work.
 
 ## To Sample 2D images with the Karras Sampler
 ```
 python /path/to/sjc/run_img_sampling.py
 ```
-Use help -h to see the options available. Will expand the details later. 
+Use help -h to see the options available. Will expand the details later.
 
 
-## Bib 
+## Bib
 ```
 @article{sjc,
-      title={Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation}, 
+      title={Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation},
       author={Wang, Haochen and Du, Xiaodan and Li, Jiahao and Yeh, Raymond A. and Shakhnarovich, Greg},
       journal={arXiv preprint arXiv:2212.00774},
       year={2022},
