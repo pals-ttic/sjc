@@ -33,8 +33,7 @@ def final_vis():
     pbar = tqdm(range(1))
 
     with EventStorage(), HeartBeat(pbar):
-        # ckpt_fname = latest_ckpt()
-        ckpt_fname = "./ckpt/step_30000.pt"
+        ckpt_fname = latest_ckpt()
         state = torch.load(ckpt_fname, map_location="cpu")
         vox.load_state_dict(state)
         vox.to(device_glb)
