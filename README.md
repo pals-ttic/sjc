@@ -108,7 +108,7 @@ python /path/to/sjc/run_sjc.py --sd.prompt "Trump figure" --n_steps 30000 --lr 0
 ```
 ### Obama
 ```
-python /path/to/sjc/run_sjc.py --sd.prompt "Obama figure" --n_steps 30000 --lr 0.05 --sd.scale 100.0 --emptiness_weight 10000 --emptiness_step 0.5 --emptiness_multiplier 20.0 --depth_weight 0
+python /path/to/sjc/run_sjc.py --sd.prompt "Obama figure" --n_steps 30000 --lr 0.05 --sd.scale 100.0 --emptiness_weight 10000 --emptiness_step 0.5 --emptiness_multiplier 20.0 --depth_weight 0 --var_red False
 ```
 ### Biden
 ```
