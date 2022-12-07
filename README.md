@@ -21,8 +21,11 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
+## Updates
+- We have added subpixel rendering script for final high quality vis. Please run `python /path/to/sjc/highres_final_vis.py` in the exp folder after the training is complete. There are a few toggles in the script you can play with, but the default is ok. It takes about 5 minutes / 11GB on an A5000, and the extra time is mainly due to SD Decoder. 
+
 ## TODOs
-- [ ] add sub-pixel rendering script for high quality visualization such as in the teaser. Sry that in the midst of many things we did not add it. It won't affect training speed. Only done once at the end for final vis.
+- [ ] make seeds configurable. So far all seeds are hardcoded to 0. 
 - [ ] add script to reproduce 2D experiments in Fig 4. The Fig might need change once it's tied to seeds. Note that for a simple aligned domain like faces, simple scheduling like using a single σ=1.5 could already generate some nice images. But not so for bedrooms; it's too diverse and annealing seems still needed.
 - [ ] main paper figures did not use subpix rendering; appendix figures did. Replace the main paper figures to make them consistent.
 
@@ -62,7 +65,7 @@ Make a new directory to run experiments (the script generates many logging files
 mkdir exp
 cd exp
 ```
-Run the following command to generate a new 3D asset. It takes about 25 minutes on a single A5000 GPU for 10000 steps of optimization.
+Run the following command to generate a new 3D asset. It takes about 25 minutes / 10GB GPU mem on a single A5000 GPU for 10000 steps of optimization.
 ```bash
 python /path/to/sjc/run_sjc.py \
 --sd.prompt "A zoomed out high quality photo of Temple of Heaven" \
