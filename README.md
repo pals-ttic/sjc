@@ -22,7 +22,9 @@ The repository contains Pytorch implementation of Score Jacobian Chaining: Lifti
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab.
 
 ## Updates
-- We have added subpixel rendering script for final high quality vis. Please run `python /path/to/sjc/highres_final_vis.py` in the exp folder after the training is complete. There are a few toggles in the script you can play with, but the default is ok. It takes about 5 minutes / 11GB on an A5000, and the extra time is mainly due to SD Decoder. 
+- We have added subpixel rendering script for final high quality vis. The jittery videos you might have seen should be significantly better now. Please run `python /path/to/sjc/highres_final_vis.py` in the exp folder after the training is complete. There are a few toggles in the script you can play with, but the default is ok. It takes about 5 minutes / 11GB on an A5000, and the extra time is mainly due to SD Decoder. 
+- If you are running SJC with a DreamBooth fine-tuned model: the model's output distribution is already significantly narrowed. It might help to use a lower guidance scale `--sd.scale 50.0` for example. Intense mode-seeking is one cause for multi-face problem. We have internally tried DreamBooth with view-dependent prompt fine-tuning. But by and large DreamBooth integration is not ready. 
+
 
 ## TODOs
 - [ ] make seeds configurable. So far all seeds are hardcoded to 0. 
