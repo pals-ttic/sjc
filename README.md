@@ -9,9 +9,8 @@
 
 TTI-Chicago, &dagger;Purdue University
 
-The repository contains Pytorch implementation of Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation.
+Abstract: *A diffusion model learns to predict a vector field of gradients. We propose to apply chain rule on the learned gradients, and back-propagate the score of a diffusion model through the Jacobian of a differentiable renderer, which we instantiate to be a voxel radiance field. This setup aggregates 2D scores at multiple camera viewpoints into a 3D score, and repurposes a pretrained 2D model for 3D data generation. We identify a technical challenge of distribution mismatch that arises in this application, and propose a novel estimation mechanism to resolve it. We run our algorithm on several off-the-shelf diffusion image generative models, including the recently released Stable Diffusion trained on the large-scale LAION dataset.*
 
-> We introduce a method that converts a pretrained 2D diffusion generative model on images into a 3D generative model of radiance fields, without requiring access to any 3D data. The key insight is to interpret diffusion models as learned predictors of a gradient field, often referred to as the score function of the data log-likelihood. We apply the chain rule on the estimated score, hence the name Score Jacobian Chaining (SJC).
 
 <a href="https://arxiv.org/abs/2212.00774"><img src="https://img.shields.io/badge/arXiv-2212.00774-b31b1b.svg" height=22.5></a>
 <a href="https://colab.research.google.com/drive/1zixo66UYGl70VOPy053o7IV_YkQt5lCZ?usp=sharing"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>
