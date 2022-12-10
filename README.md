@@ -21,6 +21,10 @@ Abstract: *A diffusion model learns to predict a vector field of gradients. We p
 
 Many thanks to [dvschultz](https://github.com/dvschultz) for the colab, and [AmanKishore](https://github.com/AmanKishore) for the hugging face demo. 
 
+
+<img src="https://user-images.githubusercontent.com/17956191/206826892-d056ad70-b586-4b39-a4d3-6f91c814aa10.gif" width="500px"/>
+
+
 ## Updates
 - We have added subpixel rendering script for final high quality vis. The jittery videos you might have seen should be significantly better now. Please run `python /path/to/sjc/highres_final_vis.py` in the exp folder after the training is complete. There are a few toggles in the script you can play with, but the default is ok. It takes about 5 minutes / 11GB on an A5000, and the extra time is mainly due to SD Decoder. 
 - If you are running SJC with a DreamBooth fine-tuned model: the model's output distribution is already significantly narrowed. It might help to use a lower guidance scale `--sd.scale 50.0` for example. Intense mode-seeking is one cause for multi-face problem. We have internally tried DreamBooth with view-dependent prompt fine-tuning. But by and large DreamBooth integration is not ready. 
