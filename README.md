@@ -1,7 +1,7 @@
 # Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation
 
 [Haochen Wang*](https://whc.is/),
-[Xiaodan Du*](https://github.com/duxiaodan),
+[Xiaodan Du*](https://xiaodan.io),
 [Jiahao Li*](https://www.linkedin.com/in/jiahaoli95/),
 [Raymond A. Yeh&dagger;](https://raymond-yeh.com),
 [Greg Shakhnarovich](https://home.ttic.edu/~gregory/)
